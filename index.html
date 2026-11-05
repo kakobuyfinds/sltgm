@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>BaseTao spreadsheet: tallas, fotos QC y guía de selección</title>
+  <meta name="description" content="Aprende a usar una BaseTao spreadsheet: compara tallas, revisa fotos QC y organiza el coste del pedido. Explora categorías de moda en Cafans.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#172a46">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="BaseTao spreadsheet: una selección con criterio">
+  <meta property="og:description" content="Una guía independiente para comparar medidas, leer fotos QC y preparar una lista de compra con información útil.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=75">
+  <meta property="og:image:alt" content="Zapatilla Nike roja sobre fondo rojo">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <!--
+    Archivo: index.html.
+    Añadir canonical autorreferente y og:url cuando se conozca la URL de publicación.
+
+    Investigación temática: BaseTao spreadsheet.
+    Se revisaron resultados y extractos de diez sitios; no se pudo certificar
+    el orden ni la composición exacta de la primera página de Google.
+
+    basetaospreadsheet.com: catálogo, fotos QC, categorías.
+    basetaoship.com: clasificación de calzado y prendas.
+    basetaotrade.com: navegación de hallazgos.
+    basetaoglobal.com: organización de compras y QC.
+    basetaosale.com: búsqueda por marcas y categorías.
+    basetaoimport.com: selección de moda.
+    spreadsheet-basetao.com: comprobación de enlaces y planificación.
+    bestbasetaospreadsheet.com: tallas y revisión del vendedor.
+    spreadsheetbasetao.org: columnas y navegación de hojas.
+    basetao-spreadsheet.org: plantillas y comparación de referencias.
+
+    Cuatro ejes secundarios:
+    BaseTao finds; guía de BaseTao spreadsheet;
+    fotos QC de BaseTao; tallas para compras con BaseTao.
+
+    Veinte consultas relacionadas se desarrollan en los cuatro artículos.
+    La redacción es original. No se reutilizan cifras ni promesas comerciales.
+  -->
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5ec;
+      --ink: #172a46;
+      --muted: #4d5c6d;
+      --line: #d5d9d6;
+      --yellow: #e9f36b;
+      --white: #fffef9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 4px;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #345ac4;
+      outline-offset: 5px;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    .wrap {
+      width: min(1180px, 92%);
+      margin-inline: auto;
+    }
+
+    header { border-bottom: 1px solid var(--line); }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: -1px;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .brand span {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--yellow);
+      padding: 0 9px;
+      margin-right: 7px;
+      border-radius: 4px;
+    }
+
+    .edition {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .categories {
+      padding: 25px 0 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    .cat-grid a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      min-height: 53px;
+    }
+
+    .cat-grid a:hover { background: var(--yellow); }
+
+    .cat-grid a::after {
+      content: "↗";
+      margin-left: 8px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      padding: 58px 0;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 1.04;
+      letter-spacing: -2.5px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      display: block;
+      font-size: .66em;
+      line-height: 1.15;
+      margin-top: 18px;
+    }
+
+    .intro {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 13px 22px;
+      background: var(--ink);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 16px 0 0;
+    }
+
+    figure { margin: 0; }
+
+    .cover {
+      position: relative;
+      padding: 14px 14px 0;
+      background: var(--yellow);
+      border-radius: 7px;
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 6/5;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    figcaption {
+      padding: 12px 3px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .answer {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 24px;
+      background: var(--ink);
+      color: var(--white);
+      padding: 30px;
+      border-radius: 6px;
+    }
+
+    .answer p {
+      margin: 0;
+      max-width: 85ch;
+    }
+
+    .answer strong { color: var(--yellow); }
+
+    section.block {
+      padding: 55px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: clamp(27px, 3vw, 39px);
+      line-height: 1.16;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 26px;
+      margin-bottom: 24px;
+    }
+
+    .section-top p {
+      max-width: 48ch;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      border-top: 3px solid var(--ink);
+      padding-top: 16px;
+    }
+
+    .number {
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--yellow);
+      padding: 4px 8px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 21px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .visuals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .visuals figure {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .visuals img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 5/4;
+      object-fit: contain;
+      background: #efefec;
+    }
+
+    .visuals figcaption { padding: 18px 22px; }
+
+    .visuals strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    article {
+      background: var(--white);
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    article .eyebrow { color: var(--muted); }
+
+    dl { margin: 20px 0 0; }
+
+    dt {
+      font-weight: 750;
+      margin-top: 16px;
+    }
+
+    dd {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 580px;
+      background: var(--white);
+      text-align: left;
+    }
+
+    caption {
+      text-align: left;
+      padding: 16px;
+      font-weight: 700;
+    }
+
+    th, td {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    thead th {
+      background: var(--ink);
+      color: white;
+      font-size: 14px;
+    }
+
+    tr:last-child td,
+    tr:last-child th { border-bottom: 0; }
+
+    .faq { max-width: 900px; }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      padding: 19px 0;
+    }
+
+    summary {
+      font-weight: 750;
+      cursor: pointer;
+      padding-right: 12px;
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .closing {
+      padding: 38px;
+      background: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-radius: 6px;
+      margin: 45px 0;
+    }
+
+    .closing h2 {
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .closing p {
+      margin: 0;
+      max-width: 62ch;
+    }
+
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer p { max-width: 95ch; }
+
+    @media (max-width: 800px) {
+      .cat-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero { gap: 25px; }
+      .steps { gap: 16px; }
+      .articles { gap: 16px; }
+      article { padding: 22px; }
+      .section-top { display: block; }
+      .section-top p { margin-top: 12px; }
+      .answer { grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    @media (max-width: 600px) {
+      .top { align-items: start; }
+      .edition { font-size: 10px; max-width: 110px; text-align: right; }
+      .cat-grid { grid-template-columns: 1fr 1fr; }
+      .cat-grid a { font-size: 13px; padding: 10px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 0; gap: 25px; }
+      h1 { letter-spacing: -1.5px; }
+      .steps, .articles, .visuals { grid-template-columns: 1fr; }
+      .answer { padding: 24px; }
+      .closing { display: block; padding: 26px; }
+      .closing .button { margin-top: 20px; }
+      section.block { padding: 36px 0; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "BaseTao spreadsheet: tallas, fotos QC y guía de selección",
+        "description": "Guía independiente en español para organizar referencias de moda, comparar medidas y revisar fotografías antes de decidir.",
+        "inLanguage": "es",
+        "about": {
+          "@type": "Thing",
+          "name": "BaseTao spreadsheet"
+        },
+        "hasPart": [
+          {
+            "@type": "Article",
+            "headline": "BaseTao finds: cómo conservar referencias útiles",
+            "inLanguage": "es",
+            "description": "Cómo organizar enlaces, variantes, categorías, fechas y referencias."
+          },
+          {
+            "@type": "Article",
+            "headline": "Tallas para compras con BaseTao: mide antes de elegir",
+            "inLanguage": "es",
+            "description": "Criterios para comparar calzado, sudaderas, camisetas, pantalones y conjuntos."
+          },
+          {
+            "@type": "Article",
+            "headline": "Fotos QC de BaseTao: observa los detalles",
+            "inLanguage": "es",
+            "description": "Lista visual para revisar calzado, estampados, gorras, bolsos y accesorios."
+          },
+          {
+            "@type": "Article",
+            "headline": "Guía de BaseTao spreadsheet: prepara el presupuesto",
+            "inLanguage": "es",
+            "description": "Cómo separar importes, divisas, peso, destino y condiciones de devolución."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "inLanguage": "es",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es una BaseTao spreadsheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Es una lista organizada de referencias de productos que ayuda a comparar enlaces, variantes y notas antes de una compra relacionada con BaseTao. Puede presentarse como hoja de cálculo o como catálogo web; el formato depende de quien la publique."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Esta página permite descargar una hoja de cálculo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Esta página contiene una guía editorial y accesos a categorías de Cafans. No ofrece un archivo Excel ni una base de datos de productos verificados."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo elijo una talla si solo aparece S, M o L?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Solicita la tabla de medidas del modelo y compárala con una prenda que ya te quede bien. Si faltan medidas importantes, deja la talla pendiente en lugar de asumir equivalencias."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Las fotos QC demuestran la autenticidad?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Las fotos QC pueden ayudar a observar aspectos visibles, pero no acreditan por sí solas autenticidad, composición, durabilidad ni ajuste."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo preparo un presupuesto para España u otro destino?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Separa producto, transporte, comisiones y posibles impuestos. Consulta las condiciones aplicables al país de entrega y confirma la cotización final con el proveedor antes de pagar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay relación oficial con BaseTao o con las marcas mostradas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Esta es una guía independiente. Los nombres y las imágenes de marcas son referencias editoriales y no implican patrocinio, colaboración ni disponibilidad en Cafans."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/sltgm/">
+</head>
+<body>
+  <header>
+    <div class="wrap top">
+      <a class="brand" href="https://www.cafans.com" aria-label="Ir a Cafans">
+        <span>C</span>CUADERNO CAFANS
+      </a>
+      <span class="edition">Moda · criterios · referencias<br>Edición en español</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="categories" aria-label="Categorías de Cafans">
+      <div class="eyebrow">Empieza por una categoría</div>
+      <div class="cat-grid">
+        <a href="https://cafans.com/category-911-Shoes.html">Zapatillas</a>
+        <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Sudaderas y jerséis</a>
+        <a href="https://cafans.com/category-913-T-Shirts.html">Camisetas</a>
+        <a href="https://cafans.com/category-914-Jackets.html">Chaquetas</a>
+        <a href="https://cafans.com/category-915-Pants%2FShorts.html">Pantalones y shorts</a>
+        <a href="https://cafans.com/category-916-Headwear.html">Gorras y sombreros</a>
+        <a href="https://cafans.com/category-917-Sets.html">Conjuntos</a>
+        <a href="https://cafans.com/category-918-underwear%2Funderpants.html">Ropa interior</a>
+        <a href="https://cafans.com/category-919-Jersey.html">Camisetas deportivas</a>
+        <a href="https://cafans.com/category-920-Accessories.html">Accesorios</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="main-title">
+      <div>
+        <p class="eyebrow">El cuaderno de selección / 01</p>
+        <h1 id="main-title">
+          BaseTao spreadsheet
+          <span>Menos dudas.<br>Más criterio al elegir.</span>
+        </h1>
+        <p class="intro">Una referencia guardada es solo el comienzo. Aprende a contrastar medidas, leer fotos y organizar tu selección de moda antes de tomar una decisión.</p>
+        <a class="button" href="https://www.cafans.com">
+          Explorar Cafans <span aria-hidden="true">↗</span>
+        </a>
+        <p class="note">Guía independiente. Los accesos de esta página llevan a Cafans.</p>
+      </div>
+      <figure class="cover">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=75"
+          srcset="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=480&amp;q=75 480w, https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=75 960w"
+          sizes="(max-width:600px) 92vw, 44vw"
+          width="960"
+          height="800"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          alt="Zapatilla Nike roja con suela clara sobre un fondo rojo">
+        <figcaption>Referencia visual Nike · observa la forma, los paneles y el perfil de la suela. Imagen editorial; no es una ficha de venta.</figcaption>
+      </figure>
+    </section>
+
+    <aside class="answer" aria-label="Definición breve">
+      <div class="eyebrow">Respuesta directa</div>
+      <p><strong>¿Qué es una BaseTao spreadsheet?</strong> Es una lista organizada de referencias de productos que ayuda a comparar enlaces, variantes y notas antes de una compra relacionada con BaseTao. Puede presentarse como hoja de cálculo o como catálogo web; el formato depende de quien la publique.</p>
+    </aside>
+
+    <section class="block" aria-labelledby="method-title">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">Un método sencillo</p>
+          <h2 id="method-title">De la imagen a una decisión informada</h2>
+        </div>
+        <p>Un buen registro distingue lo que has comprobado de lo que todavía necesitas preguntar.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="number">01 / IDENTIFICA</span>
+          <h3>Guarda la referencia exacta</h3>
+          <p>Anota enlace de origen, modelo, color y talla. Dos imágenes parecidas pueden corresponder a variantes distintas.</p>
+        </div>
+        <div class="step">
+          <span class="number">02 / CONTRASTA</span>
+          <h3>Busca medidas y detalles</h3>
+          <p>Compara la tabla del modelo con una prenda propia. Si hay fotos de inspección, comprueba que correspondan a la variante seleccionada.</p>
+        </div>
+        <div class="step">
+          <span class="number">03 / DECIDE</span>
+          <h3>Revisa lo que falta</h3>
+          <p>Antes de pagar, confirma el importe, las condiciones y las dudas pendientes. Una foto atractiva no sustituye esa información.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">Laboratorio visual</p>
+          <h2 id="visual-title">Dos accesorios, dos formas de mirar</h2>
+        </div>
+        <p>Imágenes de referencia para aprender qué detalles pedir. No indican que estos artículos estén disponibles en los enlaces de destino.</p>
+      </div>
+      <div class="visuals">
+        <figure>
+          <img
+            src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1761588034/857593_3HBIO_9066_001_100_0000_Light-gg-canvas-baseball-cap.jpg"
+            width="490"
+            height="490"
+            loading="lazy"
+            decoding="async"
+            alt="Gorra Gucci de lona GG blanca con ribete verde oscuro">
+          <figcaption>
+            <strong>Gucci / forma y ajuste</strong>
+            En una gorra, revisa el contorno de la copa, la visera y el cierre. Pide una medida interior si la ficha no explica el ajuste.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://assets.christiandior.com/is/image/diorprod/S0856ONGEM413_E01?$r4x5_default$&amp;crop=630,908,704,914&amp;wid=640&amp;hei=800&amp;scale=0.2800&amp;bfc=on&amp;qlt=75"
+            width="640"
+            height="800"
+            loading="lazy"
+            decoding="async"
+            alt="Microbolso Lady Dior rosa empolvado con pespuntes Cannage y asas superiores">
+          <figcaption>
+            <strong>Dior / proporción y capacidad</strong>
+            Compara ancho, alto y fondo con los objetos que quieres llevar. Una fotografía aislada puede ocultar lo pequeño que es un bolso.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="reading-title">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">Dossier de lectura</p>
+          <h2 id="reading-title">Cuatro guías para preparar tu lista</h2>
+        </div>
+        <p>Referencias, tallas, inspección visual y presupuesto: cada tema resuelve una parte distinta de la compra.</p>
+      </div>
+      <div class="articles">
+        <article>
+          <p class="eyebrow">Artículo 01 · organización</p>
+          <h3>BaseTao finds: cómo conservar referencias útiles</h3>
+          <p>Una lista solo ayuda si puedes reconstruir qué viste y qué elegiste. Mantén cada variante en su propia fila.</p>
+          <dl>
+            <dt>Cómo organizar enlaces de productos</dt>
+            <dd>Guarda la dirección de origen junto a un nombre descriptivo; una captura sin enlace es difícil de comprobar después.</dd>
+            <dt>Cómo comparar variantes de color</dt>
+            <dd>Anota la denominación de la ficha y conserva una imagen de la opción seleccionada.</dd>
+            <dt>Cómo clasificar hallazgos por categoría</dt>
+            <dd>Separa calzado, prendas y accesorios para comparar artículos con funciones similares.</dd>
+            <dt>Cómo registrar la fecha de revisión</dt>
+            <dd>Indica cuándo consultaste la ficha. Vuelve a comprobarla antes de decidir.</dd>
+            <dt>Qué hacer con un enlace que no abre</dt>
+            <dd>Márcalo como pendiente y busca la referencia original; no supongas que un artículo parecido es el mismo.</dd>
+          </dl>
+        </article>
+
+        <article>
+          <p class="eyebrow">Artículo 02 · medidas</p>
+          <h3>Tallas para compras con BaseTao: mide antes de elegir</h3>
+          <p>El nombre de una talla aporta menos información que una medida tomada con un método claro.</p>
+          <dl>
+            <dt>Cómo elegir talla de zapatillas</dt>
+            <dd>Mide ambos pies y contrasta la longitud con la tabla específica del modelo. Distingue medida del pie y medida de la plantilla.</dd>
+            <dt>Cómo medir una sudadera en plano</dt>
+            <dd>Usa una prenda propia para comparar pecho, largo y mangas con el mismo procedimiento.</dd>
+            <dt>Cómo comparar el corte de una camiseta</dt>
+            <dd>Revisa hombros y ancho de pecho; la etiqueta por sí sola no describe la holgura.</dd>
+            <dt>Cómo comprobar cintura y tiro de un pantalón</dt>
+            <dd>Verifica si la cintura se mide en reposo o estirada y añade el largo de entrepierna.</dd>
+            <dt>Cómo elegir la talla de un conjunto</dt>
+            <dd>Comprueba las dos prendas por separado, especialmente si no se pueden seleccionar tallas diferentes.</dd>
+          </dl>
+        </article>
+
+        <article>
+          <p class="eyebrow">Artículo 03 · inspección</p>
+          <h3>Fotos QC de BaseTao: observa los detalles</h3>
+          <p>QC significa control de calidad. Las fotografías pueden mostrar aspectos visibles; no sustituyen una evaluación presencial ni una autenticación.</p>
+          <dl>
+            <dt>Qué revisar en las fotos de zapatillas</dt>
+            <dd>Observa ambos laterales, punteras, talones y suelas con iluminación comparable.</dd>
+            <dt>Cómo revisar un estampado en una prenda</dt>
+            <dd>Pide una vista frontal sin pliegues para observar colocación, bordes y posibles marcas.</dd>
+            <dt>Qué fotos pedir de una gorra</dt>
+            <dd>Solicita frente, laterales, interior y cierre para entender la forma y el ajuste.</dd>
+            <dt>Cómo comprobar las medidas de un bolso</dt>
+            <dd>Pide una fotografía con regla y revisa el espacio interior, además de las dimensiones exteriores.</dd>
+            <dt>Qué revisar en cierres y accesorios</dt>
+            <dd>Las fotos permiten observar el acabado; para comprobar funcionamiento o movimiento puede hacer falta un vídeo.</dd>
+          </dl>
+        </article>
+
+        <article>
+          <p class="eyebrow">Artículo 04 · planificación</p>
+          <h3>Guía de BaseTao spreadsheet: prepara el presupuesto</h3>
+          <p>Conserva los conceptos por separado. No conviertas una estimación en un importe confirmado.</p>
+          <dl>
+            <dt>Cómo calcular el coste total de un pedido</dt>
+            <dd>Suma producto, transporte, comisiones y los importes aplicables al destino que hayas confirmado.</dd>
+            <dt>Cómo comparar precios en distintas monedas</dt>
+            <dd>Anota la divisa original y la conversión utilizada; comprueba también posibles cargos del medio de pago.</dd>
+            <dt>Qué diferencia hay entre peso real y volumétrico</dt>
+            <dd>Uno expresa masa y el otro se calcula a partir del volumen. Consulta la fórmula y el criterio de cobro del transportista.</dd>
+            <dt>Qué comprobar para un envío a España</dt>
+            <dd>Confirma cobertura, restricciones y condiciones de entrega para tu dirección; haz lo mismo para cualquier otro país.</dd>
+            <dt>Cómo revisar las condiciones de devolución</dt>
+            <dd>Pregunta por plazo, motivos admitidos, responsable del transporte y gastos antes de confirmar la compra.</dd>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="record-title">
+      <p class="eyebrow">Tu ficha mínima</p>
+      <h2 id="record-title">Tres estados que evitan confusiones</h2>
+      <p>Utiliza estas etiquetas en tu propia hoja. Esta tabla es una plantilla de trabajo, no un inventario.</p>
+      <div class="table-wrap" role="region" aria-label="Plantilla de comprobación" tabindex="0">
+        <table>
+          <caption>Cómo documentar cada referencia</caption>
+          <thead>
+            <tr>
+              <th scope="col">Estado</th>
+              <th scope="col">Qué guardar</th>
+              <th scope="col">Siguiente comprobación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Por investigar</th>
+              <td>Enlace, categoría y variante deseada.</td>
+              <td>Consultar medidas y condiciones.</td>
+            </tr>
+            <tr>
+              <th scope="row">Información parcial</th>
+              <td>Datos encontrados y preguntas sin resolver.</td>
+              <td>Pedir el detalle o la fotografía que falta.</td>
+            </tr>
+            <tr>
+              <th scope="row">Revisado por ti</th>
+              <td>Fuente, fecha, medidas e importe observado.</td>
+              <td>Confirmar de nuevo antes de pagar.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block faq" aria-labelledby="faq-title">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 id="faq-title">Respuestas sin rodeos</h2>
+
+      <details open>
+        <summary>¿Qué es una BaseTao spreadsheet?</summary>
+        <p>Es una lista organizada de referencias de productos que ayuda a comparar enlaces, variantes y notas antes de una compra relacionada con BaseTao. Puede presentarse como hoja de cálculo o como catálogo web; el formato depende de quien la publique.</p>
+      </details>
+      <details>
+        <summary>¿Esta página permite descargar una hoja de cálculo?</summary>
+        <p>No. Esta página contiene una guía editorial y accesos a categorías de Cafans. No ofrece un archivo Excel ni una base de datos de productos verificados.</p>
+      </details>
+      <details>
+        <summary>¿Cómo elijo una talla si solo aparece S, M o L?</summary>
+        <p>Solicita la tabla de medidas del modelo y compárala con una prenda que ya te quede bien. Si faltan medidas importantes, deja la talla pendiente en lugar de asumir equivalencias.</p>
+      </details>
+      <details>
+        <summary>¿Las fotos QC demuestran la autenticidad?</summary>
+        <p>No. Las fotos QC pueden ayudar a observar aspectos visibles, pero no acreditan por sí solas autenticidad, composición, durabilidad ni ajuste.</p>
+      </details>
+      <details>
+        <summary>¿Cómo preparo un presupuesto para España u otro destino?</summary>
+        <p>Separa producto, transporte, comisiones y posibles impuestos. Consulta las condiciones aplicables al país de entrega y confirma la cotización final con el proveedor antes de pagar.</p>
+      </details>
+      <details>
+        <summary>¿Hay relación oficial con BaseTao o con las marcas mostradas?</summary>
+        <p>No. Esta es una guía independiente. Los nombres y las imágenes de marcas son referencias editoriales y no implican patrocinio, colaboración ni disponibilidad en Cafans.</p>
+      </details>
+    </section>
+
+    <aside class="closing" aria-label="Continuar en Cafans">
+      <div>
+        <h2>Tu próxima selección empieza con una pregunta.</h2>
+        <p>¿Tienes medidas, una referencia clara y las condiciones de compra? Explora las categorías con esa información a mano.</p>
+      </div>
+      <a class="button" href="https://www.cafans.com">
+        Visitar Cafans <span aria-hidden="true">↗</span>
+      </a>
+    </aside>
+  </main>
+
+  <footer class="wrap">
+    <p><strong>Cuaderno Cafans · Guía editorial en español.</strong> No gestionamos pedidos en esta página ni garantizamos productos de terceros. Las marcas pertenecen a sus respectivos titulares. Las imágenes ilustran criterios de selección y no certifican los artículos de ninguna tienda.</p>
+    <a href="https://www.cafans.com">Continuar en Cafans ↗</a>
+  </footer>
+</body>
+</html>
